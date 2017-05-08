@@ -12,6 +12,11 @@ mod unix;
 #[cfg(unix)]
 use unix::MmapInner;
 
+#[cfg(target_os = "redox")]
+mod redox;
+#[cfg(target_os = "redox")]
+use redox::MmapInner;
+
 use std::cell::UnsafeCell;
 use std::fmt;
 use std::fs::{self, File};
