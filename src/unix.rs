@@ -118,6 +118,7 @@ impl MmapInner {
         )
     }
 
+    /*
     pub fn flush(&self, offset: usize, len: usize) -> io::Result<()> {
         let alignment = (self.ptr as usize + offset) % page_size();
         let offset = offset as isize - alignment as isize;
@@ -173,6 +174,7 @@ impl MmapInner {
     pub fn make_mut(&mut self) -> io::Result<()> {
         self.mprotect(libc::PROT_READ | libc::PROT_WRITE)
     }
+    */
 
     #[inline]
     pub fn ptr(&self) -> *const u8 {

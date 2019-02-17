@@ -368,6 +368,7 @@ impl Mmap {
         MmapOptions::new().map(file)
     }
 
+    /*
     /// Transition the memory map to be writable.
     ///
     /// If the memory map is file-backed, the file must have been opened with write permissions.
@@ -409,6 +410,7 @@ impl Mmap {
         self.inner.make_mut()?;
         Ok(MmapMut { inner: self.inner })
     }
+    */
 }
 
 impl Deref for Mmap {
@@ -520,6 +522,7 @@ impl MmapMut {
         MmapOptions::new().len(length).map_anon()
     }
 
+    /*
     /// Flushes outstanding memory map modifications to disk.
     ///
     /// When this method returns with a non-error result, all outstanding changes to a file-backed
@@ -638,6 +641,7 @@ impl MmapMut {
         self.inner.make_exec()?;
         Ok(Mmap { inner: self.inner })
     }
+    */
 }
 
 impl Deref for MmapMut {
